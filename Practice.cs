@@ -144,3 +144,91 @@ else
     Console.WriteLine("The answer is not greater than 10");
     Console.WriteLine("Or the first number is not equal to the second");
 }
+
+// while loop and language around the work
+using System;
+
+namespace ConsoleApp1
+{
+    class Program
+    {
+        static void Main(string[] args)
+        {
+            int counter = 0;
+            while (counter < 10)
+            {
+                Console.WriteLine($"Hello World! The counter is {counter}");
+                counter++;
+            }
+        }
+    }
+}
+
+// do while loop
+int counter = 0;
+do
+{
+  Console.WriteLine($"Hello World! The counter is {counter}");
+  counter++;
+} while (counter < 10);
+
+// for loop
+for(int counter = 0; counter < 10; counter++)
+{
+  Console.WriteLine($"Hello World! The counter is {counter}");
+}
+
+// combining branches and loops
+int sum = 0;
+for (int number = 1; number < 21; number++)
+{
+  if (number % 3 == 0)
+  {
+    sum = sum + number;
+  }
+}
+Console.WriteLine($"The sum is {sum}");
+
+// lists/arrays/collections
+var names = new List<string> { "Adrienne", "Ana", "Felipe" };
+foreach (var name in names)
+{
+    Console.WriteLine($"Hello {name.ToUpper()}!");
+}
+
+// add, remove
+var names = new List<string> { "Adrienne", "Ana", "Felipe" };
+foreach (var name in names)
+{
+    Console.WriteLine($"Hello {name.ToUpper()}!");
+}
+
+Console.WriteLine();
+names.Add("Maria");
+names.Add("Bill");
+names.Remove("Ana");
+foreach (var name in names)
+{
+    Console.WriteLine($"Hello {name.ToUpper()}!");
+}
+
+// refer to index value, count items
+var names = new List<string> { "Adrienne", "Ana", "Felipe" };
+foreach (var name in names)
+{
+    Console.WriteLine($"Hello {name.ToUpper()}!");
+}
+
+Console.WriteLine();
+names.Add("Maria");
+names.Add("Bill");
+names.Remove("Ana");
+foreach (var name in names)
+{
+    Console.WriteLine($"Hello {name.ToUpper()}!");
+}
+
+Console.WriteLine($"My name is {names[0]}.");
+Console.WriteLine($"I've added {names[2]} and {names[3]} to the list.");
+
+Console.WriteLine($"The list has {names.Count} people in it");
