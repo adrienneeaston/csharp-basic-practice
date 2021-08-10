@@ -144,3 +144,47 @@ else
     Console.WriteLine("The answer is not greater than 10");
     Console.WriteLine("Or the first number is not equal to the second");
 }
+
+// while loop and language around the work
+using System;
+
+namespace ConsoleApp1
+{
+    class Program
+    {
+        static void Main(string[] args)
+        {
+            int counter = 0;
+            while (counter < 10)
+            {
+                Console.WriteLine($"Hello World! The counter is {counter}");
+                counter++;
+            }
+        }
+    }
+}
+
+// do while loop
+int counter = 0;
+do
+{
+  Console.WriteLine($"Hello World! The counter is {counter}");
+  counter++;
+} while (counter < 10);
+
+// for loop
+for(int counter = 0; counter < 10; counter++)
+{
+  Console.WriteLine($"Hello World! The counter is {counter}");
+}
+
+// combining branches and loops
+int sum = 0;
+for (int number = 1; number < 21; number++)
+{
+  if (number % 3 == 0)
+  {
+    sum = sum + number;
+  }
+}
+Console.WriteLine($"The sum is {sum}");
