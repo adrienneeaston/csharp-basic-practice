@@ -25,3 +25,37 @@ Console.WriteLine(message);
 string firstName = "Bob"; 
 string greeting = "Hello";
 Console.WriteLine(greeting + " " + firstName + "!");
+
+// string interpolation
+string firstName = "Bob"; 
+string message = $"Hello {firstName}!";
+Console.WriteLine(message);
+
+string firstName = "Bob"; 
+string greeting = "Hello";
+string message = $"{greeting} {firstName}!";
+Console.WriteLine(message);
+
+string firstName = "Bob"; 
+string greeting = "Hello";
+Console.WriteLine($"{greeting} {firstName}!");
+
+// combining verbatum string literals with interpolation
+string projectName = "First-Project";
+Console.WriteLine($@"C:\Output\{projectName}\Data");
+
+// project
+string projectName = "ACME";
+string russianMessage = "\u041f\u043e\u0441\u043c\u043e\u0442\u0440\u0435\u0442\u044c \u0440\u0443\u0441\u0441\u043a\u0438\u0439 \u0432\u044b\u0432\u043e\u0434";
+
+Console.WriteLine($@"View English output:
+    c:\exercise\{projectName}\data.txt
+    ");
+Console.WriteLine($@"{russianMessage}:
+    c:\exercise\{projectName}\ru-RUdata.txt");
+
+// View English output:
+// 		c:\Exercise\ACME\data.txt
+
+// Посмотреть русский вывод:
+// 		c:\Exercise\ACME\ru-RU\data.txt
