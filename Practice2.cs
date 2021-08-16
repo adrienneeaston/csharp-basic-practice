@@ -59,3 +59,90 @@ Console.WriteLine($@"{russianMessage}:
 
 // Посмотреть русский вывод:
 // 		c:\Exercise\ACME\ru-RU\data.txt
+
+// simple addition and implicit data conversion
+int firstNumber = 12;
+int secondNumber = 7;
+Console.WriteLine(firstNumber + secondNumber);
+
+string firstName = "Bob";
+int widgetsSold = 7;
+Console.WriteLine(firstName + " sold " + widgetsSold + " widgets.");
+
+string firstName = "Bob";
+int widgetsSold = 7;
+Console.WriteLine(firstName + " sold " + widgetsSold + 7 + " widgets."); // 77
+
+string firstName = "Bob";
+int widgetsSold = 7;
+Console.WriteLine(firstName + " sold " + (widgetsSold + 7) + " widgets."); // 14
+
+// decimals
+int sum = 7 + 5;
+int difference = 7 - 5;
+int product = 7 * 5;
+int quotient = 7 / 5;
+
+Console.WriteLine("Sum: " + sum);
+Console.WriteLine("Difference: " + difference);
+Console.WriteLine("Product: " + product);
+Console.WriteLine("Quotient: " + quotient);
+
+decimal decimalQuotient = 7.0m / 5;
+Console.WriteLine("Decimal quotient: " + decimalQuotient);
+
+decimal decimalQuotient = 7 / 5.0m;
+decimal decimalQuotient = 7.0m / 5.0m;
+Console.WriteLine(decimalQuotient);
+
+int first = 7;
+int second = 5;
+decimal quotient = (decimal)first / (decimal)second;
+Console.WriteLine(quotient);
+
+Console.WriteLine("Modulus of 200 / 5 : " + (200 % 5));
+Console.WriteLine("Modulus of 7 / 5: " + (7 % 5));
+
+int value1 = 3 + 4 * 5;
+int value2 = (3 + 4) * 5;
+Console.WriteLine(value1);
+Console.WriteLine(value2);
+
+// incrementing and decrimenting
+int value = 1;
+
+value = value + 1;
+Console.WriteLine("First increment: " + value);
+
+value += 1;
+Console.WriteLine("Second increment: " + value);
+
+value++;
+Console.WriteLine("Third increment: " + value);
+
+value = value - 1;
+Console.WriteLine("First decrement: " + value);
+
+value -= 1;
+Console.WriteLine("Second decrement: " + value);
+
+value--;
+Console.WriteLine("Third decrement: " + value);
+
+// position of the increment operator
+int value = 1;
+value++;
+Console.WriteLine("First: " + value);
+Console.WriteLine("Second: " + value++);
+Console.WriteLine("Third: " + value);
+Console.WriteLine("Fourth: " + (++value));
+// First: 2
+// Second: 2
+// Third: 3
+// Fourth: 4
+// when val++ is in a console log or being assigned to a variable, it will be asking for the return 
+
+// mini project, converting fahrenheit to celcius
+int fahrenheit = 94;
+decimal celcius = ((decimal)fahrenheit - (decimal)32m) * (5m / 9m);
+Console.WriteLine($"The temperature is {celcius} Celcius.");
