@@ -146,3 +146,18 @@ Console.WriteLine("Fourth: " + (++value));
 int fahrenheit = 94;
 decimal celcius = ((decimal)fahrenheit - (decimal)32m) * (5m / 9m);
 Console.WriteLine($"The temperature is {celcius} Celcius.");
+
+// classes with stateless and stateful methods
+Random dice = new Random();
+int roll = dice.Next(1, 7);
+Console.WriteLine(roll);
+
+// Overloaded methods
+Random dice = new Random();
+int roll1 = dice.Next();
+int roll2 = dice.Next(101);
+int roll3 = dice.Next(50, 101);
+
+Console.WriteLine($"First roll: {roll1}");
+Console.WriteLine($"Second roll: {roll2}");
+Console.WriteLine($"Third roll: {roll3}");
