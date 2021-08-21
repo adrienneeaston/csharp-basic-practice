@@ -203,29 +203,38 @@ foreach (var value in result)
 
 // Formatting
 // 1. Create a const string x that contains formatting tokens
-
+const string x = "Hello! My name is {0}. I live in {1} and I enjoy {2}.";
+const string name = "Adrienne";
+const string city = "Seattle";
+const string activity = "acting";
 
 // 2. Create another string y that uses string.Format to insert values into string x
-
+string y = string.Format(x, name, city, activity);
 
 // 3. Print string y
-
-
-// 4. Create a double d and initialize it to a number with > 2 decimal places.
-
+double d = 5.0245;
 
 // 5. Print the double, but only include 2 decimals when printing
-
+Console.WriteLine(Math.Round(d, 2));
 
 // Printing and parsing
 // 1. Create bool a, int b, double c, and char d, and initialize them to whatever you want (other than default values).
-
+bool a = false;
+int b = 7;
+double c = 3.14;
+char d = 'w';
 
 // 2. Convert these types to strings w, x, y, and z.
-
+string w = a.ToString();
+string x = b.ToString();
+string y = c.ToString();
+string z = d.ToString();
 
 // 3. Create bool e, int f, double g, and char h. Use the appropriate Parse() method to initialize these variables from the strings w, x, y, and z.
-
+bool e = bool.Parse(w);
+int f = int.Parse(x);
+double g = double.Parse(y);
+char h = char.Parse(z);
 
 // Enums
 // 1. Create an enum inside the HelloWorld namespace, but outside of the Program class
