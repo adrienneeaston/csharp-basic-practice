@@ -120,3 +120,160 @@ c = (double)z;
 x = (int)a;
 y = (int)b;
 z = (int)c;
+
+// Strings
+// Escapes and literals
+// 1. Create a string with escape sequences in it and print it out
+string myString = "You should say \"Hello!\"";
+Console.WriteLine(myString);
+
+// 2. Create a literal string and print it out
+string sentence = @"\path.cs";
+Console.WriteLine(sentence);
+
+// Concatenation
+// 1. Concatenate two strings together and print them out
+string greeting = "My name is ";
+string name = "Adrienne!";
+Console.WriteLine(greeting + name);
+
+// Length
+// 1. Print a string along with its length
+string answer = "Hello there!";
+Console.WriteLine($"String: {answer}, Length: {answer.Length}");
+
+// Indexing
+// 1. Create a string with length > 3 with an odd number of characters.
+string characters = "starlight";
+
+// 2. Print the first, middle, and last character, concatenated together.
+Console.WriteLine($"{characters[0]}{characters[characters.Length / 2]}{characters[characters.Length - 1]}");
+
+// 3. Make sure your code still works when you change the string size to a different odd number.
+string characters = "stars";
+
+// Changing case
+// 1. Print a string, the same string in all uppercase, and the same string in all lowercase
+string sentence = "I probably have ADHD.";
+Console.WriteLine(sentence.ToUpper());
+Console.WriteLine(sentence.ToLower());
+
+// Getting parts of strings
+// 1. Create a string with length > 3.
+string characters = "stars";
+
+// 2. Print the string with both the first and last characters removed.
+string foo = characters.Remove(0, 1);
+string bar = foo.Remove(foo.Length - 1, 1);
+Console.WriteLine(bar);
+
+// 3. Make sure your code still works if you change the string size.
+string characters = "starlight";
+
+// 4. Repeat the above exercise using a different string method.
+Console.WriteLine(characters.Substring(1, characters.Length - 2));
+
+// Searching
+// 1. Declare strings x and char y and initialize them to whatever you like.
+string x = "tattoo";
+char y = 't';
+
+// 2. Write an expression that returns the index of the first occurrence of char y in string x
+Console.WriteLine(x.IndexOf(y));
+
+// 3. Write an expression that returns a bool that represents if y is anywhere in string x
+Console.WriteLine(x.Contains(y));
+
+// 4. Create a literal string that holds a fake path to a file (@”c:\foo\bar.txt”, for example). Write code to get just the file name (no path), without the extension. Write code to get just the drive letter, in uppercase.
+string fakePath = @"c:\foo\bar.txt";
+int target = fakePath.LastIndexOf(@"\") + 1;
+Console.WriteLine(fakePath.Substring(target));
+
+// Splitting
+// 1. Declare string x and initialize it to whatever you like. Make sure the string has spaces in it.
+string sentence = "This is a string.";
+
+// 2. Split the string on space and observe the results
+string[] result = sentence.Split(' ');
+Console.WriteLine(result);
+foreach (var value in result)
+{
+    Console.WriteLine($"Substring: {value}");
+}
+
+// Formatting
+// 1. Create a const string x that contains formatting tokens
+
+
+// 2. Create another string y that uses string.Format to insert values into string x
+
+
+// 3. Print string y
+
+
+// 4. Create a double d and initialize it to a number with > 2 decimal places.
+
+
+// 5. Print the double, but only include 2 decimals when printing
+
+
+// Printing and parsing
+// 1. Create bool a, int b, double c, and char d, and initialize them to whatever you want (other than default values).
+
+
+// 2. Convert these types to strings w, x, y, and z.
+
+
+// 3. Create bool e, int f, double g, and char h. Use the appropriate Parse() method to initialize these variables from the strings w, x, y, and z.
+
+
+// Enums
+// 1. Create an enum inside the HelloWorld namespace, but outside of the Program class
+
+
+// 2. Call the enum whatever you like, populate it with whatever names and values you like
+
+
+// 3. Declare a variable and assign it to one of the enum values.
+
+
+// 4. Using the variable, print both the enum name AND the enum value
+
+
+// Structs
+// 1. Create a struct inside the HelloWorld namespace, but outside of the Program class
+
+
+// 2. Call the struct whatever you like and add some members to it
+
+
+// 3. Declare a variable x and instantiate the struct
+
+
+// 4. Declare a variable y and instantiate the struct
+
+
+// 5. Set every member in x to the values of every member in y
+
+
+// 6. Print the members of x
+
+
+// Console I/O
+// 1. Create a program that prompts the user for their first name, then middle name, then last name, all on different lines.
+
+
+// 2. Print the first, middle, and last name all on the same line
+
+
+// 3. Print “Press any key to exit…” and wait for the user to press a key to exit.
+
+
+// Command-line arguments
+// 1. Create an enum called Direction with the values: Up, Down, Left, and Right
+
+
+// 2. Create a program that expects three arguments – a Direction, a bool, and an int.
+
+
+// a. If the program is called with no arguments OR called with one argument of “/?”, print a help message explaining what arguments are expected with an example of a valid command line.
