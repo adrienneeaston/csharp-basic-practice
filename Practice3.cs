@@ -303,17 +303,29 @@ Console.WriteLine(x.learningStyle);
 
 // Console I/O
 // 1. Create a program that prompts the user for their first name, then middle name, then last name, all on different lines.
-
+Console.WriteLine("Please enter your first name.");
+var firstName = Console.ReadLine();
+Console.WriteLine("Please enter your middle name.");
+var middleName = Console.ReadLine();
+Console.WriteLine("Please enter your last name."); 
+var lastName = Console.ReadLine();
 
 // 2. Print the first, middle, and last name all on the same line
-
+Console.Write($"{firstName} {middleName} {lastName}");
 
 // 3. Print “Press any key to exit…” and wait for the user to press a key to exit.
-
+Console.WriteLine("Press any key to exit.");
+Console.ReadKey();
 
 // Command-line arguments
 // 1. Create an enum called Direction with the values: Up, Down, Left, and Right
-
+enum Direction
+{
+  Up,
+  Down,
+  Left,
+  Right
+}
 
 // 2. Create a program that expects three arguments – a Direction, a bool, and an int.
 
