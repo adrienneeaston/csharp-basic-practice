@@ -238,35 +238,68 @@ char h = char.Parse(z);
 
 // Enums
 // 1. Create an enum inside the HelloWorld namespace, but outside of the Program class
-
+enum Ids
+{
+  Apples,
+  Grapes = 20,
+  Oranges = 30,
+  Blueberries = 10
+}
 
 // 2. Call the enum whatever you like, populate it with whatever names and values you like
-
+enum Ids
+{
+  Apples,
+  Grapes = 20,
+  Oranges = 30,
+  Blueberries = 10
+}
 
 // 3. Declare a variable and assign it to one of the enum values.
-
+var target = Ids.Blueberries;
 
 // 4. Using the variable, print both the enum name AND the enum value
-
+Console.WriteLine(target); // Blueberries
+Console.WriteLine((int)target); // 10
 
 // Structs
 // 1. Create a struct inside the HelloWorld namespace, but outside of the Program class
-
+public struct student
+{
+  public string school;
+  public int grade;
+  public string learningStyle;
+}
 
 // 2. Call the struct whatever you like and add some members to it
-
+public struct Student
+{
+  public string school;
+  public int grade;
+  public string learningStyle;
+}
 
 // 3. Declare a variable x and instantiate the struct
-
+var x = new Student();
+x.school = "Roosevelt High School";
+x.grade = 10;
+x.learningStyle = "kinesthetic";
 
 // 4. Declare a variable y and instantiate the struct
-
+var y = new Student();
+y.school = "Ballard High School";
+y.grade = 9;
+y.learningStyle = "visual";
 
 // 5. Set every member in x to the values of every member in y
-
+x.school = y.school;
+x.grade = y.grade;
+x.learningStyle = y.learningStyle;
 
 // 6. Print the members of x
-
+Console.WriteLine(x.school);
+Console.WriteLine(x.grade);
+Console.WriteLine(x.learningStyle);
 
 // Console I/O
 // 1. Create a program that prompts the user for their first name, then middle name, then last name, all on different lines.
