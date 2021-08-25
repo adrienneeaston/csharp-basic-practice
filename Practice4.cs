@@ -225,7 +225,18 @@ Console.WriteLine(string.Join(", ", foo));
 
 // Multi-dimensional arrays
 // 1. Create a 2D int array of any size
+var foo = new int[3, 3];
+foo[0, 0] = 1;
+foo[0, 1] = 2;
+foo[0, 2] = 3;
+foo[1, 0] = 4;
+foo[1, 1] = 5;
+foo[1, 2] = 6;
+foo[2, 0] = 7;
+foo[2, 1] = 8;
+foo[2, 2] = 9;
 
+Console.WriteLine(foo[2, 2]); // 9
 
 // 2. Use any loop(s) to store the product of the two indices in each element
 // a. For example, the element at [2,3] should be set to 6
