@@ -317,6 +317,9 @@ Console.Write($"{firstName} {middleName} {lastName}");
 Console.WriteLine("Press any key to exit.");
 Console.ReadKey();
 
+
+// COME BACK TO THESE
+
 // Command-line arguments
 // 1. Create an enum called Direction with the values: Up, Down, Left, and Right
 enum Direction
@@ -331,3 +334,15 @@ enum Direction
 
 
 // a. If the program is called with no arguments OR called with one argument of “/?”, print a help message explaining what arguments are expected with an example of a valid command line.
+Console.WriteLine("Helllloooo!");
+Console.WriteLine(args);
+Console.WriteLine($"Args: {args} ");
+if (args.Length == 0) 
+{
+    Console.WriteLine("The following arguments are expected: Direction, bool, int (ie Down, true, 30)");
+}
+
+if (args.ToString() == "/?")
+{
+    Console.WriteLine("The following arguments are expected: Direction, bool, int (ie Down, true, 30)");
+}
