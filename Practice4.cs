@@ -240,25 +240,66 @@ Console.WriteLine(foo[2, 2]); // 9
 
 // 2. Use any loop(s) to store the product of the two indices in each element
 // a. For example, the element at [2,3] should be set to 6
+for (int i = 0; i < 3; i++)
+{
+    for (int j = 0; j < 3; j++)
+    {
+        foo[i, j] = i * j;
+    }
+}
 
+Console.WriteLine(foo[2, 2]); // 4
 
 // 3. Print the contents of the array using a foreach loop
-
+foreach (int i in foo) 
+{
+    Console.WriteLine(i + ", "); // hits every spot row by row in the 2d array
+}
 
 // Functions
 // Basic functions
 // 1. Write a function that prints out whatever string you pass into it. Call the function to make sure it works.
+static void Sentence(string msg)
+{
+    Console.WriteLine(msg);
+}
 
+Sentence("Hello World!");
 
 // 2. Write a function that concatenates three strings and returns the result. Call the function to make sure it works.
+static void Sentence(string msg1, string msg2, string msg3)
+{
+    Console.WriteLine(msg1 + msg2 + msg3);
+}
 
+Sentence("Ad", "rie", "nne");
 
 // 3. Write a function that takes in an int array, an int index, and an int value. The function should update the array at the specified index with the specified value. If the index is out of range, the function should do nothing. Call the function to make sure it works.
+static void changeVal(int[] list, int i, int val)
+{
+    if (i < 5)
+    {
+        list[i] = val;
+    }
+}
 
+int[] arr = { 1, 2, 3, 4, 5 };
+changeVal(arr, 3, 100);
+Console.WriteLine(arr[3]);
 
 // 4. Write a function that takes in a string and returns a new string that contains every other word (starting from the first) in the original. Call the function to make sure it works.
 // a. For example, passing in “to be or not to be” should return “to or to”
-
+public static string changeStr(string)
+{
+    string[] result = string.Split(" ");
+    foreach (string s in result) 
+    {
+        if (Array.FindIndex(result, s) % 2 == 0 || Array.FindIndex(result, s) == 0)
+        {
+            // figure out how to remove elements or push elements to new array
+        }
+    }
+}
 
 // 5. Write a function that takes in a string, an optional int parameter called index, and an optional int parameter called length. The function should return a substring of the original string starting at the specified index, with the specified length. Call the function to make sure it works.
 // a. If the index or length are out of range, the function should return an empty string.
