@@ -289,17 +289,23 @@ Console.WriteLine(arr[3]);
 
 // 4. Write a function that takes in a string and returns a new string that contains every other word (starting from the first) in the original. Call the function to make sure it works.
 // a. For example, passing in “to be or not to be” should return “to or to”
-public static string changeStr(string)
+static string changeStr(string str)
 {
-    string[] result = string.Split(" ");
-    foreach (string s in result) 
+    string[] result = str.Split(" ");
+    foreach (string s in result)
     {
-        if (Array.FindIndex(result, s) % 2 == 0 || Array.FindIndex(result, s) == 0)
+        int index = Array.IndexOf(result, s);
+        if (index % 2 == 1)
         {
-            // figure out how to remove elements or push elements to new array
+            result[index] = " ";
         }
     }
+
+    string realResult = string.Join("", result);
+    return realResult;
 }
+
+string test = changeStr("This is a test here.");
 
 // 5. Write a function that takes in a string, an optional int parameter called index, and an optional int parameter called length. The function should return a substring of the original string starting at the specified index, with the specified length. Call the function to make sure it works.
 // a. If the index or length are out of range, the function should return an empty string.
