@@ -337,13 +337,71 @@ Console.WriteLine($"result: {subStr("Adrienne", 4, 3)}");
 // Reference type equality
 // 1. Write a function called AreArraysEqual that returns bool. The function should take in two int arrays and return whether they contain the same elements, in the same order. Call the function to make sure it works.
 // a. The function should return immediately as soon detects a mismatch
+static bool AreArraysEqual(int[] arr1, int[] arr2)
+{
+    if (arr1.Length != arr2.Length)
+    {
+        return false;
+    }
 
+    for (int i = 0; i < arr1.Length; i++)
+    { 
+        if (arr1[i] != arr2[i])
+        {
+            return false;
+        }
+    }
+
+    return true;
+}
+
+int[] arr1 = { 1, 2, 3, 4 };
+int[] arr2 = { 1, 2, 3, 4 };
+Console.WriteLine($"result: {AreArraysEqual(arr1, arr2)}");
 
 // Output parameters
 // 1. Write a function that returns void with two int input parameters. The function should have four output parameters that should return the sum, difference, product, and quotient of the two inputs. Call the function to make sure it works.
+static void Main(string[] args)
+{
+    int sum;
+    int diff;
+    int prod;
+    int quotient;
+    Calculate(7, 3, out sum, out diff, out prod, out quotient);
 
+    Console.WriteLine($"The sum is {sum}.");
+    Console.WriteLine($"The difference is {diff}.");
+    Console.WriteLine($"The product is {prod}.");
+    Console.WriteLine($"The quotient is {quotient}.");
+}
+
+static void Calculate(int num1, int num2, out int sum, out int difference, out int product, out int quotient)
+{
+    sum = num1 + num2;
+    difference = num1 - num2;
+    product = num1 * num2;
+    quotient = num1 / num2;
+}
 
 // Reference parameters
 // 1. Write a function that takes in a string and a reference to an int. The function should return the character at the index specified by the int.
 // a. If the int is negative, the first character should be returned and the int should be changed to 0.
 // b. If the int is larger than the string length, the last character should be returned and the int should be changed to the last index in the string.
+static void Main(string[] args)
+{
+    Console.WriteLine($"Result: {character("California", 4)}");
+}
+
+static char character(string word, int index)
+{
+    if (index < 0)
+    {
+        index = 0;
+    } 
+    else if (index >= word.Length)
+    {
+        index = word.Length - 1;
+    }
+    
+    return word[index];
+}
