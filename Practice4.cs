@@ -311,7 +311,28 @@ string test = changeStr("This is a test here.");
 // a. If the index or length are out of range, the function should return an empty string.
 // b. If the index is not specified, start at index 0
 // c. If the length is not specified (or is 0), take the rest of the string
+static string subStr(string str, int index = 0, int length = 0)
+{
+    if (index >= str.Length || length > str.Length - index)
+    {
+        return "";
+    }
 
+    if (index == 0)
+    {
+        index = 0;
+    }
+
+    if (length == 0)
+    {
+        length = str.Length - index;
+    }
+
+    string result = str.Substring(index, length);
+    return result;
+}
+
+Console.WriteLine($"result: {subStr("Adrienne", 4, 3)}");
 
 // Reference type equality
 // 1. Write a function called AreArraysEqual that returns bool. The function should take in two int arrays and return whether they contain the same elements, in the same order. Call the function to make sure it works.
