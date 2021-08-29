@@ -289,34 +289,119 @@ Console.WriteLine(arr[3]);
 
 // 4. Write a function that takes in a string and returns a new string that contains every other word (starting from the first) in the original. Call the function to make sure it works.
 // a. For example, passing in “to be or not to be” should return “to or to”
-public static string changeStr(string)
+static string changeStr(string str)
 {
-    string[] result = string.Split(" ");
-    foreach (string s in result) 
+    string[] result = str.Split(" ");
+    foreach (string s in result)
     {
-        if (Array.FindIndex(result, s) % 2 == 0 || Array.FindIndex(result, s) == 0)
+        int index = Array.IndexOf(result, s);
+        if (index % 2 == 1)
         {
-            // figure out how to remove elements or push elements to new array
+            result[index] = " ";
         }
     }
+
+    string realResult = string.Join("", result);
+    return realResult;
 }
+
+string test = changeStr("This is a test here.");
 
 // 5. Write a function that takes in a string, an optional int parameter called index, and an optional int parameter called length. The function should return a substring of the original string starting at the specified index, with the specified length. Call the function to make sure it works.
 // a. If the index or length are out of range, the function should return an empty string.
 // b. If the index is not specified, start at index 0
 // c. If the length is not specified (or is 0), take the rest of the string
+static string subStr(string str, int index = 0, int length = 0)
+{
+    if (index >= str.Length || length > str.Length - index)
+    {
+        return "";
+    }
 
+    if (index == 0)
+    {
+        index = 0;
+    }
+
+    if (length == 0)
+    {
+        length = str.Length - index;
+    }
+
+    string result = str.Substring(index, length);
+    return result;
+}
+
+Console.WriteLine($"result: {subStr("Adrienne", 4, 3)}");
 
 // Reference type equality
 // 1. Write a function called AreArraysEqual that returns bool. The function should take in two int arrays and return whether they contain the same elements, in the same order. Call the function to make sure it works.
 // a. The function should return immediately as soon detects a mismatch
+static bool AreArraysEqual(int[] arr1, int[] arr2)
+{
+    if (arr1.Length != arr2.Length)
+    {
+        return false;
+    }
 
+    for (int i = 0; i < arr1.Length; i++)
+    { 
+        if (arr1[i] != arr2[i])
+        {
+            return false;
+        }
+    }
+
+    return true;
+}
+
+int[] arr1 = { 1, 2, 3, 4 };
+int[] arr2 = { 1, 2, 3, 4 };
+Console.WriteLine($"result: {AreArraysEqual(arr1, arr2)}");
 
 // Output parameters
 // 1. Write a function that returns void with two int input parameters. The function should have four output parameters that should return the sum, difference, product, and quotient of the two inputs. Call the function to make sure it works.
+static void Main(string[] args)
+{
+    int sum;
+    int diff;
+    int prod;
+    int quotient;
+    Calculate(7, 3, out sum, out diff, out prod, out quotient);
 
+    Console.WriteLine($"The sum is {sum}.");
+    Console.WriteLine($"The difference is {diff}.");
+    Console.WriteLine($"The product is {prod}.");
+    Console.WriteLine($"The quotient is {quotient}.");
+}
+
+static void Calculate(int num1, int num2, out int sum, out int difference, out int product, out int quotient)
+{
+    sum = num1 + num2;
+    difference = num1 - num2;
+    product = num1 * num2;
+    quotient = num1 / num2;
+}
 
 // Reference parameters
 // 1. Write a function that takes in a string and a reference to an int. The function should return the character at the index specified by the int.
 // a. If the int is negative, the first character should be returned and the int should be changed to 0.
 // b. If the int is larger than the string length, the last character should be returned and the int should be changed to the last index in the string.
+static void Main(string[] args)
+{
+    Console.WriteLine($"Result: {character("California", 4)}");
+}
+
+static char character(string word, int index)
+{
+    if (index < 0)
+    {
+        index = 0;
+    } 
+    else if (index >= word.Length)
+    {
+        index = word.Length - 1;
+    }
+    
+    return word[index];
+}
