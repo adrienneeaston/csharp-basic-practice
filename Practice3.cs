@@ -331,18 +331,65 @@ enum Direction
 }
 
 // 2. Create a program that expects three arguments – a Direction, a bool, and an int.
-
-
-// a. If the program is called with no arguments OR called with one argument of “/?”, print a help message explaining what arguments are expected with an example of a valid command line.
-Console.WriteLine("Helllloooo!");
-Console.WriteLine(args);
-Console.WriteLine($"Args: {args} ");
-if (args.Length == 0) 
+enum Direction
 {
-    Console.WriteLine("The following arguments are expected: Direction, bool, int (ie Down, true, 30)");
+    Up,
+    Down,
+    Left,
+    Right
+}
+static void Main(string[] args)
+{
+    Console.WriteLine(args[0]);
+    Direction direction = (Direction)Enum.Parse(typeof(Direction), args[0]);
+    Console.WriteLine(direction);
+
+    Console.WriteLine(args[1]);
+    bool decision = Convert.ToBoolean(args[1]);
+    Console.WriteLine(decision);
+
+    Console.WriteLine(args[2]);
+    int num = Convert.ToInt32(args[2]);
+    Console.WriteLine(num);
+
 }
 
-if (args.ToString() == "/?")
+// a. If the program is called with no arguments OR called with one argument of “/?”, print a help message explaining what arguments are expected with an example of a valid command line.
+class Program
 {
-    Console.WriteLine("The following arguments are expected: Direction, bool, int (ie Down, true, 30)");
+    enum Direction
+    {
+        Up,
+        Down,
+        Left,
+        Right
+    }
+    static void Main(string[] args)
+    {
+        if (args.Length == 0)
+        {
+            Console.WriteLine("The following arguments are expected: Direction, bool, int (ie Down, true, 30)");
+        }
+
+        // Does this work?
+        foreach (var arg in args)
+        {
+            if (arg.ToString() == "/?")
+            {
+                Console.WriteLine("The following arguments are expected: Direction, bool, int (ie Down, true, 30)");
+            }
+        }
+
+        Console.WriteLine(args[0]);
+        Direction direction = (Direction)Enum.Parse(typeof(Direction), args[0]);
+        Console.WriteLine(direction);
+
+        Console.WriteLine(args[1]);
+        bool decision = Convert.ToBoolean(args[1]);
+        Console.WriteLine(decision);
+
+        Console.WriteLine(args[2]);
+        int num = Convert.ToInt32(args[2]);
+        Console.WriteLine(num);
+    }
 }
